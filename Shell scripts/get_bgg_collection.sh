@@ -14,9 +14,12 @@ done
 download_dir='/home/pi/xml'
 www_dir='/var/www/html'
 cd $download_dir
+
+file_name='collection'
+file_xml="$file_name.xml"
 wget "https://www.boardgamegeek.com/xmlapi2/collection?username=psson73&own=1&type=thing&subtype=boardgame" -O collection.xml
 sed -i "s/?>/?><?xml-stylesheet type=\"text\/xsl\" href=\"conf\/collection.xsl\"?>/" collection.xml
-sudo cp /home/pi/xml/collection.xml /var/www/html
+sudo cp "$download_dir/$file_xml" "$www_dir"
 
 file_name='collection_owned_incl_exp'
 file_xml="$file_name.xml"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts ":d:w" opt ; do
+while getopts ":d:w:" opt ; do
 	case $opt in
 		d) download_dir="$OPTARG"
 		;;
@@ -11,13 +11,11 @@ while getopts ":d:w" opt ; do
 	esac
 done
 
-download_dir='/home/pi/xml'
-www_dir='/var/www/html'
 cd $download_dir
 
 file_name='collection'
 file_xml="$file_name.xml"
-wget "https://www.boardgamegeek.com/xmlapi2/collection?username=psson73&own=1&type=thing&subtype=boardgame" -O collection.xml
+wget "https://www.boardgamegeek.com/xmlapi2/collection?username=psson73&own=1&type=thing&subtype=boardgame" -O "$file_xml"
 sed -i "s/?>/?><?xml-stylesheet type=\"text\/xsl\" href=\"conf\/collection.xsl\"?>/" collection.xml
 sudo cp "$download_dir/$file_xml" "$www_dir"
 

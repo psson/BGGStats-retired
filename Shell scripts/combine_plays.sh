@@ -17,5 +17,5 @@ file_name='combined_plays'
 file_xml="$file_name.xml"
 xml_grep --pretty_print indented --wrap plays --descr --cond "plays" plays_*.xml > "$file_xml"
 sed -i "s/?>/?><?xml-stylesheet type=\"text\/xsl\" href=\"conf\/combined_plays.xsl\"?>/" "$file_xml"
-sudo cp "$download_dir/$file_xml" "$www_dir"
+sudo mv "$download_dir/$file_xml" "$www_dir"
 rm plays_*.xml

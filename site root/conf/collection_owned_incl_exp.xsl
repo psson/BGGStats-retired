@@ -41,13 +41,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					</tr>
 				</xsl:for-each>
 			</table>
-			<h2>Närmast Friendless metric (15)</h2>
+			<h2>Närmast Friendless metric (17)</h2>
 			<table border="1">
 				<tr>
 					<th>Spel</th>
 					<th>Omgångar</th>
 				</tr>
-				<xsl:for-each select="items/item[numplays &lt; 18 and numplays &gt; 12]">
+				<xsl:for-each select="items/item[numplays &lt; 20 and numplays &gt; 14]">
 				<xsl:sort select="numplays" order="descending" data-type="number"/>
 					<tr>
 						<td>

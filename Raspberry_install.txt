@@ -1,0 +1,13 @@
+Installation of the Raspberry Pi
+================================
+
+The Raspberry is installed with Raspbian from raspberry.org
+https://www.raspberrypi.org/downloads/raspbian/
+
+Select SSH during installation. Other than that it is left to defaults.
+
+Packages to install after OS install
+nginx?
+libxml2-utils?
+xmllint?
+
